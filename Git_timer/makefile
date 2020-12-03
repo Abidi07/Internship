@@ -16,9 +16,9 @@ CC               = avr-gcc
 AS               = avr-size 
 AO               = avr-objcopy 
 PROGRAMMER       = usbtiny
-OBJ_O            = led_blink.o
-OBJ_C            = led_blink.c
-OBJ_ELF          = led_blink.elf
+OBJ_O            = timer_int.o
+OBJ_C            = timer_int.c
+OBJ_ELF          = timer_int.elf
 AVRDUDE          = /home/abidi/Downloads/arduino-1.8.5/hardware/tools/avr/bin/avrdude 
 AVRDUDECONF      = -C/home/abidi/Downloads/arduino-1.8.5/hardware/tools/avr/etc/avrdude.conf
 FUSE_EXT         = -Uefuse:w:0xFF:m
@@ -26,10 +26,10 @@ FUSE_HIGH        = -Uhfuse:w:0xD7:m
 FUSE_LOW         = -Ulfuse:w:0xC2:m
 LOCK             = -Ulock:w:0xFF:m
 BAUD_RATE        = 19200
-HF               = led_blink_all.hex
-WRITE_FLASH      = -Uflash:w:led_blink_all.hex
+HF               = timer_int_all.hex
+WRITE_FLASH      = -Uflash:w:timer_int_all.hex
 PORT             = 
-COMPILE          = avr-gcc -Wall -Os -DF_CPU=$8e6 -mmcu=attiny85
+COMPILE          = avr-gcc -Wall -Os -DF_CPU=${CPU_FREQUENCY} -mmcu=attiny85
 CFLAGS           = -std=c99 -Wall -g -Os -mmcu=attiny85 -DF_CPU=${CPU_FREQUENCY} -I
 
 
